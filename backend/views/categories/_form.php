@@ -20,7 +20,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'published')->checkbox() ?>
 
-    <?= $form->field($model, 'published_at')->textInput() ?>
+    <?= $form->field($model, 'published_at')->widget(\yii\jui\DatePicker::className(),
+        ['language' => 'ru', 'dateFormat' => 'yyyy-MM-dd', 'options' => ['class' => 'form-control']]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -22,7 +22,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'published')->checkbox() ?>
 
-    <?= $form->field($model, 'published_at')->textInput() ?>
+    <?= $form->field($model, 'published_at')->widget(\yii\jui\DatePicker::className(),
+        ['language' => 'ru', 'dateFormat' => 'yyyy-MM-dd', 'options' => ['class' => 'form-control']]) ?>
 
     <?= $form->field($model, 'category_id')->dropDownList($categories); ?>
 
