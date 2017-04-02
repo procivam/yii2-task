@@ -52,7 +52,7 @@ class Categories extends \yii\db\ActiveRecord
             'slug' => 'URL алиас',
             'description' => 'Описание',
             'published' => 'Опубликовано',
-            'published_at' => 'Опубликовано в',
+            'published_at' => 'Дата публикации',
         ];
     }
 

@@ -57,7 +57,7 @@ class Posts extends \yii\db\ActiveRecord
             'description' => 'Описание',
             'anounce' => 'Анонс',
             'published' => 'Опубликовано',
-            'published_at' => 'Опубликовано в',
+            'published_at' => 'Дата публикации',
             'category_id' => 'Категория',
             'tags' => 'Теги',
         ];
