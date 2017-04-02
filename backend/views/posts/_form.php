@@ -20,11 +20,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'anounce')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'published')->textInput() ?>
+    <?= $form->field($model, 'published')->checkbox() ?>
 
     <?= $form->field($model, 'published_at')->textInput() ?>
 
-    <?= $form->field($model, 'category_id')->textInput() ?>
+    <?= $form->field($model, 'category_id')->dropDownList($categories); ?>
 
     <?= $form->field($model, 'tags')->textarea(['rows' => 6]) ?>
 

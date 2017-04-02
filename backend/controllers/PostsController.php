@@ -2,9 +2,11 @@
 
 namespace backend\controllers;
 
-use Yii;
+use backend\models\Categories;
 use backend\models\Posts;
 use backend\models\PostsSearch;
+use Yii;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -21,7 +23,7 @@ class PostsController extends Controller
     {
         return [
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class'   => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -39,7 +41,7 @@ class PostsController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
+            'searchModel'  => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -69,7 +71,8 @@ class PostsController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                'model'      => $model,
+                'categories' => ArrayHelper::map(Categories::find()->all(), 'id', 'name'),
             ]);
         }
     }
@@ -88,7 +91,8 @@ class PostsController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                'model'      => $model,
+                'categories' => ArrayHelper::map(Categories::find()->all(), 'id', 'name'),
             ]);
         }
     }
